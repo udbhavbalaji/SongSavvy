@@ -85,6 +85,7 @@ body {
     border-radius: 16px;
 }
 
+
 .login-container .action-group button {
     background-color: #7bf29a;
     color: #000000;
@@ -94,9 +95,9 @@ body {
     border: 0px;
     border-radius: 40px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: 20px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .login-container .action-group button:hover,
