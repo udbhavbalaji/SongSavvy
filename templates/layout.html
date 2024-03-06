@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+        <title>{{ title }} | SongSavvy</title>
+    {% else %}
+        <title>SongSavvy</title>
+    {% endif %}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/layout_styles.css') }}">
+
+
+</head>
+<body>
+
+    <div class="topbar">
+
+        <!-- TODO: Center logo with heading as a single clickable item -->
+
+        <div class="logo-box">
+            <center>
+                <a href="{{url_for('home')}}">
+                    <img src="{{url_for('static', filename='logo.png')}}" alt="SongSavvy Logo">
+                </a>
+            </center>
+            
+        </div>
+
+        <div class="heading-bar">
+            <a href="{{url_for('home')}}">
+                <h1>Song Savvy</h1>
+            </a>
+            
+        </div>
+        
+    </div>
+
+    <center>
+        {% block content %}{% endblock %}
+    </center>
+
+    <script src="https://kit.fontawesome.com/6674ea7100.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
