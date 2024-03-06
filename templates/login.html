@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+{% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="form-flash opacity-50 alert alert-{{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <div class="create-form form-container-flash">
+
+            <div class="heading">
+                <h1>
+                    {{ title }}
+                </h1>
+            </div>
+    
+            <form method="POST" action="">
+    
+                {{ form.hidden_tag() }}
+    
+                <div class="form-group">
+                    {{ form.username.label() }}
+    
+                    {% if form.username.errors %}
+                        {{ form.username(class="is-invalid") }}
+                        <div class="form-error-text">
+                            {% for error in form.username.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(placeholder="some_person@123") }}
+                    {% endif %}
+    
+                </div>
+    
+                <div class="form-group">
+                    {{ form.password.label() }}
+    
+                    {% if form.password.errors %}
+                        {{ form.password(class="is-invalid", placeholder="Password") }}
+                        <div class="form-error-text">
+                            {% for error in form.password.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(placeholder="Password") }}
+                    {% endif %}
+    
+                </div>
+    
+                <div class="form-check">
+                    {{ form.remember(class="form-check-input") }}
+                    {{ form.remember.label(class="form-check-label white-text") }}
+                </div>
+    
+                {{ form.submit(class="create-button") }}
+    
+            </form>
+    
+            <div class="linked-text">
+                <a href="{{url_for('create_account')}}">Create an Account</a> | <a href="#">Forgot Password?</a>
+            </div>
+    
+        </div>
+        
+    {% else %}
+        
+        <div class="create-form form-container">
+
+            <div class="heading">
+                <h1>
+                    {{ title }}
+                </h1>
+            </div>
+
+            <form method="POST" action="">
+
+                {{ form.hidden_tag() }}
+
+                <div class="form-group">
+                    {{ form.username.label() }}
+
+                    {% if form.username.errors %}
+                        {{ form.username(class="is-invalid") }}
+                        <div class="form-error-text">
+                            {% for error in form.username.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.username(placeholder="some_person@123") }}
+                    {% endif %}
+
+                </div>
+
+                <div class="form-group">
+                    {{ form.password.label() }}
+
+                    {% if form.password.errors %}
+                        {{ form.password(class="is-invalid", placeholder="Password") }}
+                        <div class="form-error-text">
+                            {% for error in form.password.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(placeholder="Password") }}
+                    {% endif %}
+
+                </div>
+
+                <div class="form-check">
+                    {{ form.remember(class="form-check-input") }}
+                    {{ form.remember.label(class="form-check-label white-text") }}
+                </div>
+
+                {{ form.submit(class="create-button") }}
+
+            </form>
+
+            <div class="linked-text">
+                <a href="{{url_for('create_account')}}">Create an Account</a> | <a href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+        
+    {% endif %}
+{% endwith %}
+
+{% endblock content %}

@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="text-flash opacity-50 alert alert-{{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            <div class="text-content text-container-flash">
+
+                <div class="heading">
+                    <h1>
+                        Welcome to Song Savvy!
+                    </h1>
+                </div>
+        
+                <div class="paratext">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed sodales sem, in lacinia ligula. Fusce sagittis congue urna eget dictum. Praesent sollicitudin non urna non congue. Donec hendrerit interdum leo vel elementum. Fusce interdum, sapien nec sodales fringilla, mauris mauris convallis mauris, sit amet porttitor tellus dolor nec ligula. Morbi auctor enim non ex suscipit lobortis ac pharetra quam. Cras eu porttitor augue. Cras malesuada leo id dui fermentum, a pharetra justo laoreet. Cras semper bibendum vestibulum. Donec id lectus massa.
+                        <br/>
+                        <br/>
+                        Nulla non faucibus massa. Nam auctor porttitor lorem non varius. Nulla faucibus imperdiet luctus. Ut faucibus id purus quis vestibulum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis dictum turpis quis dui efficitur, sit amet congue tellus condimentum. Fusce rhoncus leo et suscipit dignissim. Duis non nunc vel leo porta finibus. Etiam enim justo, semper sed nulla sit amet, interdum egestas ipsum. Vestibulum ac euismod mauris.
+                    
+                    </p>
+                </div>
+        
+            </div>
+        {% else %}
+            <div class="text-content text-container">
+
+                <div class="heading">
+                    <h1>
+                        Welcome to Song Savvy!
+                    </h1>
+                </div>
+        
+                <div class="paratext">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed sodales sem, in lacinia ligula. Fusce sagittis congue urna eget dictum. Praesent sollicitudin non urna non congue. Donec hendrerit interdum leo vel elementum. Fusce interdum, sapien nec sodales fringilla, mauris mauris convallis mauris, sit amet porttitor tellus dolor nec ligula. Morbi auctor enim non ex suscipit lobortis ac pharetra quam. Cras eu porttitor augue. Cras malesuada leo id dui fermentum, a pharetra justo laoreet. Cras semper bibendum vestibulum. Donec id lectus massa.
+                        <br/>
+                        <br/>
+                        Nulla non faucibus massa. Nam auctor porttitor lorem non varius. Nulla faucibus imperdiet luctus. Ut faucibus id purus quis vestibulum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis dictum turpis quis dui efficitur, sit amet congue tellus condimentum. Fusce rhoncus leo et suscipit dignissim. Duis non nunc vel leo porta finibus. Etiam enim justo, semper sed nulla sit amet, interdum egestas ipsum. Vestibulum ac euismod mauris.
+                    
+                    </p>
+                </div>
+        
+            </div>
+        {% endif %}
+    {% endwith %}
+
+{% endblock content %}
