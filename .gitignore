@@ -3,3 +3,4 @@
 __pycache__
 templates/old_templates
 static/css/old_styles
+*.pdf
