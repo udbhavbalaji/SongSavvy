@@ -1,9 +1,9 @@
-from flask import Flask, render_template, flash, redirect, url_for
-from forms import CreateAccountForm, LoginForm
+from flask import render_template, flash, redirect, url_for
+from songsavvy.models import User, Search
+from songsavvy.forms import CreateAccountForm, LoginForm
+from songsavvy import app
 
-app = Flask(__name__)
-app.config['SECRET_KEY'] = 'cdeac8f173801449a79cf1c89ab2b757'
-
+app.app_context().push()
 
 names = ['Udbhav',
         'Dhriti',
@@ -19,7 +19,6 @@ def layout():
 def home():
     return render_template('home.html', names=names, title='Home')
 
-
 @app.route('/test')
 def test():
     return render_template('old_templates/testing.html')
@@ -32,7 +31,6 @@ def create_account():
         return redirect(url_for('home'))
     return render_template('create_account.html', title="Create Account", form=form)
 
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -44,7 +42,3 @@ def login():
             flash('Login Unsuccessful. Check your username and/or password.', 'danger')
     return render_template('login.html', title="Login", form=form)
 
-
-if __name__ == "__main__":
-    app.run(debug=True)
-    

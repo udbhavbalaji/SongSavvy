@@ -202,3 +202,26 @@ body {
 .white-text {
     color: #ffffff;
 }
+
+
+.button-label {
+    margin-top: 20px;
+}
+
+
+.button-label a { 
+    color: #7bf29a;
+    font-size: 20px;
+}
+
+
+.button-label a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+.button-label a p {
+    text-decoration: underline;
+    display: inline-block;
+}
