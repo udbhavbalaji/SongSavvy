@@ -5,3 +5,4 @@ templates/old_templates
 static/css/old_styles
 *.pdf
 instance
+*.json
