@@ -39,8 +39,10 @@ body {
     position: fixed;
     top: 0;
     right: 0;
+    margin-right: 15%;
+    /* have to comment out the background color attr */
     /* background-color: #ffffff; */
-    width: 85%;
+    width: 70%;
     height: 130px;
     text-align: center;
 }
@@ -62,12 +64,34 @@ body {
     color: #ffffff;
 }
 
+.topbar .action-box {
+    /* background-color: #ffffff; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 15%;
+    height: 130px;
+}
+
+.topbar .action-box a {
+    text-decoration: none;
+}
+
+.topbar .action-box img {
+    margin-top: 10px;
+    /* width: 130px; */
+    margin-top: 50px;
+    color: #7bf29a;
+    border-radius: 8px;
+    height: 35px;
+}
+
 .text-content {
     color: #b3b3b3;
 }
 
 .form-container {
-    margin-top: 160px;
+    margin-top: 180px;
     background-color: #1c1c1c;
     padding: 20px;
     border-radius: 16px;
@@ -83,7 +107,7 @@ body {
 }
 
 .text-container {
-    margin-top: 160px;
+    margin-top: 180px;
     background-color: #1c1c1c;
     padding: 20px;
     border-radius: 16px;
@@ -224,4 +248,108 @@ body {
 .button-label a p {
     text-decoration: underline;
     display: inline-block;
+}
+
+.topbar .action-box .action-icon {
+    color: #7bf29a;
+    text-align: center;
+    font-size: 45px;
+    margin-top: 41px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.topbar .action-box a:hover .action-icon {
+    color: #ffffff;
+}
+
+.topbar .action-box .action-icon-create {
+    color: #7bf29a;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 41px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.topbar .action-box a:hover .action-icon-create {
+    color: #ffffff;
+}
+
+.footer-relative {
+    background-color: #1c1c1c;
+    margin-top: 70px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+
+.footer-fixed {
+    background-color: #1c1c1c;
+    margin-top: 70px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    position: fixed;
+}
+
+.footer-relative .empty-row {
+    height: 10px;
+}
+
+.footer-relative .link-container {
+    /* background-color: #dd0707; */
+    margin-left: 240px;
+    height: 230px;
+    width: 70%;
+    display: inline-flex;
+}
+
+/* .footer-relative .link-container ul {
+    list-style: none;
+}
+
+.footer-relative .link-container ul li {
+    display: inline-block;
+    width: 100%;
+    padding: 0px 5px;
+} */
+
+.footer-relative .link-container .quick-links {
+    /* background-color: #ffffff; */
+    height: 230px;
+    width: 45%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.footer-relative .link-container .quick-links h2 {
+    margin-top: 10px;
+    padding: 5px;
+    /* background-color: #dd0707; */
+    text-align: left;
+    color: #7bf29a;
+    position: relative;
+}
+
+.footer-relative .link-container .quick-links ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.footer-relative .link-container .quick-links ul li {
+    padding: 10px 10px;
+}
+
+.footer-relative .link-container .quick-links ul li a {
+    text-decoration: none;
+    color: #b3b3b3;
+    font-size: 18px;
+}
+
+.footer-relative .link-container .quick-links ul li a:hover {
+    color: #ffffff;
 }

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="create-form form-container">
+
+        <div class="heading">
+            <h1>
+                {{ title }}
+            </h1>
+        </div>
+
+        <form method="GET" action="{{ url_for('result') }}">
+
+            {{ form.hidden_tag() }}
+
+            <div class="form-group">
+                {{ form.song_url.label() }}
+
+                {% if form.song_url.errors %}
+                    {{ form.song_url(class="is-invalid") }}
+                    <div class="form-error-text">
+                        {% for error in form.song_url.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.song_url(placeholder="Enter Song URL") }}
+                {% endif %}
+            
+            </div>
+
+            {{ form.submit(class="create-button") }}
+
+        </form>
+
+    </div>
+{% endblock content %}
+
+{% block footer %}
+    <div class="footer-fixed">
+
+    </div>
+{% endblock footer %}

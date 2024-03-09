@@ -26,7 +26,7 @@
         <div class="logo-box">
             <center>
                 <a href="{{url_for('home')}}">
-                    <img src="{{url_for('static', filename='logo.png')}}" alt="SongSavvy Logo">
+                    <img src="{{url_for('static', filename='images/logo.png')}}" alt="SongSavvy Logo">
                 </a>
             </center>
             
@@ -36,7 +36,29 @@
             <a href="{{url_for('home')}}">
                 <h1>Song Savvy</h1>
             </a>
-            
+        </div>
+
+        <div class="action-box">
+            <center>
+
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('account') }}">
+                        <i class="fa-regular fa-circle-user action-icon"></i>
+                    </a>
+                    <a href="{{ url_for('logout') }}">
+                        <i class="fa-solid fa-door-open action-icon"></i>
+                    </a>
+                {% else %}
+                    <a href="{{ url_for('login') }}">
+                        <i class="fa-solid fa-arrow-right-to-bracket action-icon"></i>
+                    </a>
+
+                    <a href="{{ url_for('create_account') }}">
+                        <i class="fa-solid fa-user-plus action-icon-create"></i>
+                    </a>
+                {% endif %}
+                
+            </center>
         </div>
         
     </div>
@@ -44,6 +66,11 @@
     <center>
         {% block content %}{% endblock %}
     </center>
+
+    {% block footer %}{% endblock %}
+    <!-- <div class="footer">
+
+    </div> -->
 
     <script src="https://kit.fontawesome.com/6674ea7100.js" crossorigin="anonymous"></script>
 
